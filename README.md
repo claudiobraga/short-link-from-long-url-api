@@ -40,18 +40,24 @@ Postman / Internet browser (GET, POST)
 
 http://localhost:8080/urls
 
+
 http://localhost:8080/urls/description?description=dev
+
 
 http://localhost:8080/urls/customalias?customAlias=UZaS8
 
+
 Sample JSON on Postman with POST method
+
 {
     "originalUrl": "https://github.com/orgs/claudiobraga/dashboard",
     "creationDate": "2021-04-27",
     "description": "gitHub"
 }
 
+
 Response Body with status 201 Created
+
 
 {
     "originalUrl": "https://github.com/orgs/claudiobraga/dashboard",
@@ -73,11 +79,15 @@ Handler some constraint regarding to the Short Link.
 
 Built With
 
+
 Spring Framework
+
 
 Maven - Dependency Management
 
+
 JavaSE-11
+
 
 Author
 Cláudio Braga
