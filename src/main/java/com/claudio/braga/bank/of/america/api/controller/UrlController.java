@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.claudio.braga.bank.of.america.domain.model.Url;
-import com.claudio.braga.bank.of.america.domain.model.UrlShortener;
 import com.claudio.braga.bank.of.america.domain.model.repository.UrlRepository;
+import com.claudio.braga.bank.of.america.domain.service.CreateShortUrlService;
 
 @RestController
 @RequestMapping("/urls")
@@ -26,11 +26,17 @@ public class UrlController {
 	private UrlRepository urlRepository;
 	
 	@Autowired
-	private UrlShortener urlShortener;
+	private CreateShortUrlService createShortUrlService;
+	
+	
+	@PostMapping
+	@ResponseStatus(HttpStatus.CREATED)
+	public Url createUrl(@Valid @RequestBody Url url){
+		return createShortUrlService.createShortLink(url);
+	}
 	
 	@GetMapping
 	public List<Url> getUrl(){
-		
 		return urlRepository.findAll();
 	}
 	
@@ -55,20 +61,4 @@ public class UrlController {
 				"</html>";
 		return redirect;
 	}
-	
-	@PostMapping
-	@ResponseStatus(HttpStatus.CREATED)
-	public Url createUrl(@Valid @RequestBody Url url){
-		Integer msg = urlShortener.decode(url.getOriginalUrl());
-		url.setCustomAlias(urlShortener.encode(msg));
-		
-		if(url.getCustomAlias().equals("")) {
-			msg = urlShortener.decode2(url.getOriginalUrl());
-			url.setCustomAlias(urlShortener.encode2(msg));
-		}
-		
-		Url urlsaved = urlRepository.save(url);
-		return urlsaved;
-	}
-	
 }

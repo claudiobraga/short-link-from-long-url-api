@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 
 import com.claudio.braga.bank.of.america.domain.model.UrlShortener;
 import com.claudio.braga.bank.of.america.domain.model.repository.UrlRepository;
+import com.claudio.braga.bank.of.america.domain.service.CreateShortUrlService;
 
 import io.restassured.http.ContentType;
 
@@ -25,6 +26,9 @@ public class UrlControllerTest {
 	
 	@MockBean
 	private UrlShortener urlShortener;
+	
+	@MockBean
+	private CreateShortUrlService createShortUrlService;
 	
 	@BeforeEach
 	public void setup() {

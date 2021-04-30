@@ -13,5 +13,6 @@ public interface UrlRepository extends JpaRepository<Url, Long>{
 	List<Url> findByDescriptionContaining(String description);
 	
 	Url findByCustomAlias(String customalias);
-
+	
+	Url findByCustomAliasLike(String customAlias);
 }

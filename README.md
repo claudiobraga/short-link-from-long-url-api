@@ -1,6 +1,6 @@
 BAML Cláudio Braga Application
 
-Web Application to create a URL shortening service
+Web Application to create a URL Shortening service
 
 
 Getting Started
@@ -37,8 +37,11 @@ Start as a Spring Boot Application
 Running and see functionalities Working
 
 Postman / Internet browser (GET, POST)
+
 http://localhost:8080/urls
+
 http://localhost:8080/urls/description?description=dev
+
 http://localhost:8080/urls/customalias?customAlias=UZaS8
 
 Sample JSON on Postman with POST method
@@ -60,17 +63,20 @@ Response Body with status 201 Created
 
 
 
-OBS: the value in customAlias is the shortlink ("customAlias": "FLnDec")in this case is FLnDec
-that will redirect to the original url/link that is https://github.com/orgs/claudiobraga/dashboard.
+OBS: the value in customAlias is the Short Link ("customAlias": "FLnDec")in this case is FLnDec
+that will redirect to the original Link that is https://github.com/orgs/claudiobraga/dashboard.
 Also I did write the HTML in the controller(I know that this is not the best practice) was just to facilitate my understanding, because I was running out of time.
 
-With more time I could handling the exceptions, create an index to put there the HTML to redirect to the original link.
-Handler some constraint regarding to the shortlink.
+With more time I could create an index to put there the HTML to redirect to the original link.
+Handler some constraint regarding to the Short Link.
 
 
 Built With
+
 Spring Framework
+
 Maven - Dependency Management
+
 JavaSE-11
 
 Author

@@ -1,6 +1,6 @@
 CREATE TABLE url(
 	id BIGINT(20) PRIMARY KEY AUTO_INCREMENT,
-	original_url VARCHAR(255) NOT NULL,
+	original_url VARCHAR(2000) NOT NULL,
 	custom_alias VARCHAR(100),
 	creation_date DATE,
 	description VARCHAR(60)
