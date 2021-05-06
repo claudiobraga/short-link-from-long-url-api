@@ -37,7 +37,7 @@ Build
 mvn clean install
 
 
-Short Link Cláudio Braga Application
+How to Run the Short Link Cláudio Braga Application
 
 
 Start as a Spring Boot Application
@@ -86,9 +86,6 @@ Response Body with status 201 Created
 
 OBS: the value in customAlias is the Short Link ("customAlias": "FLnDec") in this case the short link is FLnDec
 that will redirect to the original Link that is https://github.com/orgs/claudiobraga/dashboard.
-Also I did write the HTML in the controller(I know that this is not the best practice, and is not the way to do it) was just a workaround to facilitate my understanding, because I was running out of time.
-
-With more time I could create an index to put there the HTML that I wrote in the controller, and do others improvements.
 
 
 To see the redirect working outside of Postman, is need to past the short link in the browser as follow below:
